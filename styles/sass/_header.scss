@@ -1,0 +1,95 @@
+@import "globalStyles";
+
+// 
+
+header {
+    height: 100vh;
+    background-image: url(../assets/home-header.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+// 
+
+header li {
+    position: relative;
+}
+
+header li::after {
+    content: "";
+    display: inline-block;
+    width: 10%;
+    border-bottom: 2px solid $highlightColor;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    opacity: 0;
+    margin: 0 0 0 45%;
+    transition: all 0.2s;
+}
+
+header li:hover::after,
+header li:focus-within::after {
+    content: "";
+    width: 85%;
+    margin: 0 0 0 7.5%;
+    opacity: 1;
+}
+
+header li a {
+    font-size: 20px;
+    font-weight: 700px;
+}
+
+header ul {
+    display: flex;
+    padding: 20px 0;
+    li {
+        margin: 0 20px 0 0;
+    }
+}
+
+h1 {
+    font-size: 69px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.restaurantTitle {
+    background: $textColor;
+    color: $darkColor;
+    // display: inline-block;
+    padding-top: 15px;
+
+}
+
+.headerImage {
+    width: 50%;
+    position: absolute;
+    right: 0;
+    bottom: -150px;
+}
+
+
+// 
+
+.contactPage {
+    height: 100vh;
+}
+
+.contactPage header {
+    background-image: url(../assets/contact-header.jpg);
+    height: 70vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+// 
+
+.blogPage header {
+    background-image: url(../assets/blog-header.jpg);
+    height: 70vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

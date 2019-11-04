@@ -1,0 +1,296 @@
+@import "globalStyles";
+
+// internal links
+
+h2 {
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.internalLinks {
+    background: $primaryColor;
+}
+
+.internalLinks ul {
+    padding: 150px 0 100px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.internalLinks li {
+    width: 47.5%;
+    padding: 25px 0;
+}
+
+
+.internalLinks a {
+    position: relative;
+}
+
+.internalLinks h2,
+.internalLinks p {
+    padding-left: 65px;
+}
+
+.internalLinks i {
+    color: $darkColor;
+    position: absolute;
+    top: 22.5px;
+    left: 15px;
+    z-index: 1;
+    transition: 0.75s;
+}
+
+.internalLinks i::after {
+    content: "";
+    display: inline-block;
+    padding: 20px;
+    background: $highlightColor;
+    border-radius: 50%;
+    position: absolute;
+    top: -45%;
+    z-index: -1;
+}
+
+.internalLinks li:nth-child(1) i::after {
+    left: -12.5px;
+}
+
+.internalLinks li:nth-child(2) i::after {
+    right: -7.5px;
+}
+
+.internalLinks li:nth-child(3) i::after {
+    left: -13px;
+}
+
+.internalLinks li:nth-child(4) i::after {
+    right: -10.5px;
+}
+
+.internalLinks a:hover > i,
+.internalLinks a:focus-within > i {
+    transform: rotate3d(1, 1, 1, 360deg);
+}
+
+
+/* Blog */
+
+.blog {
+    background: $secondaryColor;
+}
+
+.burgerContent,
+.tryNewContent {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.burgerContent {
+    flex-direction: row;
+    align-items: flex-end;
+    position: relative;
+    top: -30px;
+}
+
+.tryNewContent {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    padding: 0 0 40px 0;
+    position: relative;
+    top: 75px;
+}
+
+.burgerContentText,
+.newContentText {
+    width: 45%;
+}
+
+.burgerContentText {
+    padding: 0 7.5% 0 0;
+}
+
+.newContentText {
+    padding: 0 0 0 7.5%;
+}
+
+.burgerContent img,
+.tryNewContent img {
+    width: 45%;
+}
+
+.burgerContent img {
+    box-shadow: 15px 15px $highlightColor;
+}
+
+.tryNewContent img {
+    position: relative;
+    top: -15px;
+    box-shadow: -15px 15px $highlightColor;
+}
+
+/* Promo */
+
+.promo {
+    background: $primaryColor;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.promo div {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.promo h2 {
+    color: $highlightColor;
+}
+
+/* Nature space */
+
+.natureSpace {
+    background: $primaryColor;
+}
+
+.natureSpace h2 {
+    color: $highlightColor;
+}
+
+.natureSpace img {
+    width: 100%;
+}
+
+.natureSpaceInfo {
+    display: flex;
+    padding: 50px 0 65px 0;
+}
+
+.natureImage {
+    margin-right: 5%;
+    width: 25%;
+    flex-shrink: 0;
+    position: relative;
+    left: 15px;
+}
+
+.natureImage img {
+    width: 100%;
+    box-shadow: -15px 15px $highlightColor;
+}
+
+/* Camera Roll */
+
+.cameraRoll {
+    background: $secondaryColor;
+}
+
+.cameraRoll ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+
+.cameraRoll li {
+    display: inline-block;
+    width: calc((100% / 3) - 30px);
+}
+
+.cameraRoll img {
+    width: 100%;
+}
+
+// Form 
+
+.contactPage {
+    background: $primaryColor;
+}
+
+.socialMediaLinks {
+    display: flex;
+}
+
+.contactContent {
+    position: relative;
+    display: flex;
+}
+
+.contactPage form {
+    width: 60%;
+}
+
+// blog
+
+.blogPage {
+    background: $primaryColor;
+}
+
+.mainBlog {
+    width: calc((100% / 3) * 2);
+    display: flex;
+    flex-direction: column;
+}
+
+.latestBlogPost > img {
+    width: calc(100% - 15px);
+    box-shadow: -15px 15px $highlightColor;
+    position: relative;
+    left: 15px;
+    top: -75px;
+}
+
+.mainBlog h2 {
+    color: $highlightColor;
+}
+
+.latestBlogPost {
+    border: 2px solid $highlightColor;
+}
+
+.comment {
+    display: flex;
+}
+
+.comment img {
+    height: 50px;
+}
+
+.blogSidebar {
+    width: calc(100% / 3);
+    height: 700px;
+    margin: 50px;
+    padding: 15px 10px;
+    background: $secondaryColor;
+}
+
+.blogSidebar img {
+    position: relative;
+    width: 100%;
+    top: -15px;
+    left: -13.9%;
+}
+
+.blogPage main {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.blogPage form {
+    width: 85%;
+    padding: 0;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+.blogSidebar > div {
+    padding: 15px 0;
+}
+
+.recentPostList {
+    height: 150px;
+    overflow-y: scroll;
+    list-style: disc;
+    padding-left: 20px;
+}

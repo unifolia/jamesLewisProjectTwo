@@ -1,0 +1,55 @@
+@import "globalStyles";
+
+form {
+    margin: 100px;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contactPage form {
+    background: $secondaryColor;
+    box-shadow: 15px 15px $highlightColor;
+}
+
+
+label {
+    display: none;
+}
+
+input[type=text],
+textarea {
+    margin: 25px 0;
+    padding: 5px 5px 5px 20px;
+    font-family: $fontFamily;
+    color: $textColor;
+    background: none;
+    border: none;
+    border-bottom: 2px solid $highlightColor;
+}
+
+input[type=text] {
+    width: 47.5%;
+    border: none;
+    border-bottom: 2px solid $highlightColor
+}
+
+input::placeholder {
+    opacity: 1;
+    color: white;
+}
+
+textarea {
+    width: 100%;
+    border: 2px solid $highlightColor;
+}
+
+form button {
+    width: 100%;
+    background: $highlightColor;
+    &:hover {
+        background: lighten($color: $highlightColor, $amount: 25);
+        cursor: pointer;
+    }
+}

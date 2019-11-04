@@ -1,0 +1,87 @@
+$fontFamily: 'Josefin Sans', sans-serif;
+
+$primaryColor: #2B331B;
+
+$secondaryColor: #171B0E;
+
+$highlightColor: #FFD300;
+
+$darkColor: #0F0F0F;
+
+$textColor: #FFFFFF;
+
+// * {
+//     border: 1px solid red;
+// }
+
+.wrapper {
+    max-width: 1200px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+html {
+    font-size: 125%;
+    font-family: $fontFamily;
+}
+
+body,
+a {
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h3 {
+    color: $highlightColor;
+}
+
+h1,
+h2,
+h3,
+ul,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-transform: uppercase;
+}
+
+button {
+    font-family: $fontFamily;
+    font-size: 22.4px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 41.6px;
+    padding-top: 5px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 1%;
+    transition: 0.25s;
+}
+
+div > button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.readMoreButton {
+    color: $darkColor;
+    background: $highlightColor;
+}
+
+.findOutMore {
+    color: $textColor;
+    background: $darkColor;
+}
