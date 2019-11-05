@@ -1,4 +1,5 @@
 @import "globalStyles";
+@import "mixins";
 
 form {
     margin: 100px;
@@ -6,6 +7,14 @@ form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    button {
+       width: 100%;
+        background: $highlightColor;
+        &:hover {
+        background: lighten($color: $highlightColor, $amount: 25);
+        cursor: pointer;
+        }
+    } 
 }
 
 .contactPage form {
@@ -25,7 +34,6 @@ textarea {
     font-family: $fontFamily;
     color: $textColor;
     background: none;
-    border: none;
     border-bottom: 2px solid $highlightColor;
 }
 
@@ -35,7 +43,7 @@ input[type=text] {
     border-bottom: 2px solid $highlightColor
 }
 
-input::placeholder {
+placeholder {
     opacity: 1;
     color: white;
 }
@@ -43,13 +51,4 @@ input::placeholder {
 textarea {
     width: 100%;
     border: 2px solid $highlightColor;
-}
-
-form button {
-    width: 100%;
-    background: $highlightColor;
-    &:hover {
-        background: lighten($color: $highlightColor, $amount: 25);
-        cursor: pointer;
-    }
 }
