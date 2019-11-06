@@ -6,6 +6,9 @@
 h2 {
     font-size: 40px;
     font-weight: 300;
+    @include width-1205 {
+        font-size: 37px;
+    }
     @include medium-tablet {
         font-size: 30px;
     }
@@ -101,6 +104,10 @@ h2 {
 
 .blog {
     background: $secondaryColor;
+    padding: 25px 0;
+    @include width-700 {
+        padding: 0;
+    }
 }
 
 .burgerContent,
@@ -110,9 +117,18 @@ h2 {
     position: relative;
     img {
         width: 45%;
+        @include width-700 {
+            width: 100%;
+        }
     }
     & > div {
         width: 45%;
+        @include width-700 {
+            width: 100%;
+        }
+    }
+    @include width-700 {
+        flex-wrap: wrap;
     }
 }
 
@@ -122,6 +138,12 @@ h2 {
     top: -30px;
     .burgerContentText {
         padding: 0 7.5% 0 0;
+        @include width-700 {
+            padding: 100px 7.5% 50px 7.5%;
+        }
+    }
+    @include width-1205 {
+        top: 0;
     }
 }
 
@@ -132,6 +154,12 @@ h2 {
     top: 75px;
     .newContentText {
         padding: 0 0 0 7.5%;
+        @include width-700 {
+            padding: 100px 7.5%;
+        }
+    }
+    @include width-1205 {
+        top: 50px;
     }
 }
 
@@ -150,7 +178,7 @@ h2 {
 .promo {
     background: $primaryColor;
     text-align: center;
-    padding: 100px 0;
+    padding: 75px 0;
     h2 {
         color: $highlightColor;
     }
@@ -169,7 +197,7 @@ h2 {
     }
     img {
         width: 100%;
-        min-height: 250px;
+        // min-height: 250px;
     }
 }
 
@@ -186,6 +214,9 @@ h2 {
     left: 15px;
     img {
         box-shadow: -15px 15px $highlightColor;
+    }
+    @include width-800 {
+        display: none;
     }
 }
 
@@ -223,7 +254,135 @@ h2 {
     }
 }
 
-// Form 
+
+// blog page
+
+.blogPage {
+    background: $primaryColor;
+    main {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        @include width-920 {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    form {
+        width: 85%;
+        padding: 0;
+        margin: 0 auto;
+        padding: 100px 0;
+    }
+    .wrapper {
+        height: auto;
+    }
+}
+
+.mainBlog {
+    width: calc((100% / 3) * 2);
+    display: flex;
+    flex-direction: column;
+    h2 {
+        color: $highlightColor;
+    }
+    @include width-920 {
+        width: 90%;
+    }
+}
+
+.latestBlogPost {
+    border: 2px solid $highlightColor;
+    & > img {
+        width: calc(100% - 15px);
+        box-shadow: -15px 15px $highlightColor;
+        position: relative;
+        left: 15px;
+        top: -75px;
+        @include width-920 {
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: none;
+        }
+    }
+    .employmentOpportunities {
+        padding: 0 25px 75px 25px;
+        & > p {
+            font-weight: 1000;
+        }
+        p {
+            padding: 15px 0;
+        }
+        @include width-920 {
+            padding-top: 75px;
+        }
+        @include smartphone {
+            padding: 0 0 75px 0;
+        }
+    }
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+}
+
+.commentContent {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 25px 0;
+    & p:nth-child(1) {
+    color: $highlightColor;
+    padding: 0 0 15px 0;
+    }
+    & p:nth-child(2) {
+        @include smartphone {
+            height: 200px;
+            overflow-y: scroll;
+        }
+    }
+    .comment {
+        width: 70%;
+    }
+    img {
+        height: 100px;
+        width: auto;
+        padding: 0 15px 0 0;
+    }
+}
+
+.blogSidebar {
+    width: calc(100% / 3);
+    height: 600px;
+    margin: 50px;
+    padding: 15px 10px;
+    background: $secondaryColor;
+    img {
+        position: relative;
+        width: 100%;
+        top: -15px;
+        left: -65px;
+    }
+    & > div {
+        padding: 15px 0;
+    }
+    @include width-920 {
+        width: 90%;
+        height: auto;
+        text-align: center;
+        img {
+            display: none;
+        }
+    }
+}
+
+.recentPostList {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+// Contact page
 
 .contactPage {
     height: 100vh;
@@ -233,9 +392,6 @@ h2 {
     }
 }
 
-.socialMediaLinks {
-    display: flex;
-}
 
 .contactContent {
     position: relative;
@@ -251,7 +407,8 @@ h2 {
     }
     ul {
         @include width-1024 {
-            width: 25%;
+            width: 50%;
+            margin: 0 auto;
         }
     }
     li {
@@ -264,93 +421,66 @@ h2 {
 .contactInfo {
     width: 40%;
     padding: 100px 0;
+    position: relative;
     > p {
         padding: 0 0 25px 0;
     }
     i {
-    color: $highlightColor;
-    margin: 0 20px 25px 0;
-    &:hover {
-        color: lighten($color: $highlightColor, $amount: 25);
-        transform: scale(1.05);
-    }
-    }
-}
-
-// blog
-
-.blogPage {
-    background: $primaryColor;
-    main {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-    }
-    form {
-        width: 85%;
-        padding: 0;
-        margin: 0 auto;
-        padding: 100px 0;
-    }
-}
-
-.mainBlog {
-    width: calc((100% / 3) * 2);
-    display: flex;
-    flex-direction: column;
-    h2 {
         color: $highlightColor;
+        margin: 0 20px 25px 0;
+        &:hover {
+            color: lighten($color: $highlightColor, $amount: 25);
+            transform: scale(1.05);
+            @include smartphone {
+                transform: scale(1.6);
+            }
+        }
+        @include width-1024 {
+            margin-right: 0;
+        }
+        @include smartphone {
+        transform: scale(1.5);
+        margin: 25px 0;
+        }
     }
 }
 
-.latestBlogPost {
-    border: 2px solid $highlightColor;
-    & > img {
-        width: calc(100% - 15px);
-        box-shadow: -15px 15px $highlightColor;
-        position: relative;
-        left: 15px;
-        top: -75px;
-    }
-}
-
-.comment {
+.socialMediaLinks {
     display: flex;
-    flex-direction: column;
-    img {
-        min-width: 50px;
-        min-height: 50px;
-    }
-    & p:nth-child(1) {
-        color: $highlightColor;
-        padding: 10px 0;
-    }
-}
-
-.commentContent {
+    @include smartphone {
     display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 50px 0;
+    }
+    li {
+        @include smartphone {
+        width: 50%;
+        }
+    }
 }
 
-.blogSidebar {
-    width: calc(100% / 3);
-    height: 700px;
-    margin: 50px;
-    padding: 15px 10px;
+.contactContent form {
     background: $secondaryColor;
-    img {
+    box-shadow: 15px 15px $highlightColor;
+    position: absolute;
+    width: 60%;
+    top: -100px;
+    right: -25px;
+    @include width-1024 {
         position: relative;
-        width: 100%;
-        top: -15px;
-        left: -65px;
+        margin: 50px auto;
+        right: 0;
+        box-shadow: 5px 5px $highlightColor;
     }
-    & > div {
-        padding: 15px 0;
+    @include width-920 {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
     }
-}
-
-.recentPostList {
-    height: 150px;
-    overflow-y: scroll;
-    list-style: disc;
-    padding-left: 20px;
+    input[type=text] {
+        @include width-920 {
+            width: 90%;
+        }
+    }
 }

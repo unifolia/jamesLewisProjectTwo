@@ -17,6 +17,7 @@ $textColor: #FFFFFF;
 .wrapper {
     max-width: 1200px;
     width: 85%;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -41,8 +42,7 @@ a {
 h3 {
     color: $highlightColor;
 }
-
-h1,
+ 
 h2,
 h3,
 ul,
