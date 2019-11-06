@@ -76,6 +76,8 @@ header li:focus-within::after {
     }
  }
 
+//  Hamburger menu
+
 input[type=checkbox],
 .fa-hamburger {
     display: none;
@@ -106,6 +108,8 @@ input[type=checkbox]:focus-within {
      font-size: 40px;
      z-index: 998;
  }
+
+//  
 
 .restaurantTitle {
     display: inline-block;
@@ -149,6 +153,8 @@ h1 {
         display: none;
     }
 }
+
+// Header styling for other pages. Better way to do this???
 
 .contactPage header {
     background-image: url(../assets/contact-header.jpg);
