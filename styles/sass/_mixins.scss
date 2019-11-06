@@ -1,19 +1,21 @@
+  // I don't totally know how to use media queries in SCSS yet
+  
   @mixin min-screen {
   @media (min-width: 320px) { @content; }
 }
-  @mixin smartphone {
+  @mixin width-414 {
   @media (max-width: 414px) { @content; }
 }
-  @mixin width545 {
+  @mixin width-545 {
   @media (max-width: 545px) { @content; }
 }
-  @mixin small-tablet {
+  @mixin width-655 {
   @media (max-width: 655px) { @content; }
 }
   @mixin width-700 {
   @media (max-width: 700px) { @content; }
 }
-  @mixin medium-tablet {
+  @mixin width-775 {
   @media (max-width: 775px) { @content; }
 }
   @mixin width-800 {
@@ -22,7 +24,7 @@
   @mixin width-920 {
   @media (max-width: 920px) { @content; }
 }
-  @mixin ipad {
+  @mixin width-950 {
   @media (max-width: 950px) { @content; }
 }
   @mixin width-1024 {

@@ -9,6 +9,17 @@ header {
     background-size: cover;
     background-attachment: fixed;
     position: relative;
+    transition: all 0.3s;
+    .wrapper {
+        @include width-414 {
+            width: 100%;
+            position: relative;
+        }
+    }
+    input:checked + ul {
+        left: 0;
+        display: flex;
+    }
 }
 
 // 
@@ -22,6 +33,20 @@ header ul {
         a {
             font-size: 20px;
             font-weight: 700;
+        }
+    }
+    @include width-414 {
+        display: none;
+        background: $darkColor;
+        opacity: 0.95;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+        li {
+            transform: scale(2);
         }
     }
 }
@@ -45,8 +70,42 @@ header li:focus-within::after {
     width: 85%;
     margin: 0 0 0 7.5%;
     opacity: 1;
+    @include width-414 {
+        width: 30%;
+        margin: 0 0 0 35%;
+    }
+ }
+
+input[type=checkbox],
+.fa-hamburger {
+    display: none;
+    @include width-414 {
+        display: inline-block;
+    }
 }
-// 
+
+input[type=checkbox] {
+     position: absolute;
+     right: 50px;
+     top: 50px;
+     transform: scale(3);
+     z-index: 999;
+     opacity: 0;
+ }
+
+input[type=checkbox]:hover,
+input[type=checkbox]:focus-within {
+    cursor: pointer;
+}
+
+.fa-hamburger {
+     color: $highlightColor;
+     position: absolute;
+     top: 35px;
+     right: 37.5px;
+     font-size: 40px;
+     z-index: 998;
+ }
 
 .restaurantTitle {
     display: inline-block;
@@ -57,6 +116,9 @@ header li:focus-within::after {
         display: inline-block;
         width: 100%;
     }
+    @include width-414 {
+        padding-left: 7.5%;
+    }
 }
 
 h1 {
@@ -66,11 +128,12 @@ h1 {
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
-    @include width545 {
+    @include width-545 {
         font-size: 50px;
     }
-    @include smartphone {
+    @include width-414 {
         font-size: 40px;
+        padding-top: 200px;
     }
 }
 
@@ -79,10 +142,10 @@ h1 {
     position: absolute;
     right: 0;
     bottom: -150px;
-    @include ipad {
+    @include width-950 {
         bottom: -100px;
     }
-    @include small-tablet {
+    @include width-655 {
         display: none;
     }
 }
@@ -93,12 +156,27 @@ h1 {
 
 .blogPage header {
     background-image: url(../assets/blog-header.jpg);
+    h1 {
+        @include width-414 {
+            font-size: 60px;
+        }
+    }
 }
 
 .contactPage header,
 .blogPage header {
     height: 70vh;
     background-size: cover;
+    @include width-414 {
+        height: 100vh;
+        position: relative;
+        top: -40px;
+    }
+    h1 {
+        @include width-414 {
+            text-align: center;
+        }
+    }
 }
 
 // 

@@ -9,7 +9,7 @@ h2 {
     @include width-1205 {
         font-size: 37px;
     }
-    @include medium-tablet {
+    @include width-775 {
         font-size: 30px;
     }
 }
@@ -22,13 +22,13 @@ h2 {
         &:focus-within > i {
             transform: rotate3d(1, 1, 1, 360deg);
         } 
-        @include smartphone {
-        display: inline-block;
-        width: 100%;
+        @include width-414 {
+            display: inline-block;
+            width: 100%;
     }
     }
     h2 {
-        @include smartphone {
+        @include width-414 {
             color: $highlightColor;
         }
     }
@@ -54,20 +54,20 @@ h2 {
         &:nth-child(4) i::after {
             right: -10.5px;
         }
-        @include small-tablet {
+        @include width-655 {
             width: 100%;
         }
     }
-    @include small-tablet {
-    padding-top: 50px;
-    flex-direction: column;
+    @include width-655 {
+        padding-top: 50px;
+        flex-direction: column;
     }
 }
 
 .internalLinks h2,
 .internalLinks p {
     padding-left: 65px;
-    @include smartphone {
+    @include width-414 {
         padding-left: 0;
     }
 }
@@ -79,7 +79,7 @@ h2 {
     left: 15px;
     z-index: 1;
     transition: 0.75s;
-    @include smartphone {
+    @include width-414 {
         color: $highlightColor;
         top: 4px;
         left: 90%;
@@ -93,16 +93,16 @@ h2 {
         position: absolute;
         top: -45%;
         z-index: -1;
-        @include smartphone {
+        @include width-414 {
             padding: 0;
 
         }
     }
 }
 
-/* Blog */
+/* Menu / blog */
 
-.blog {
+.menu {
     background: $secondaryColor;
     padding: 25px 0;
     @include width-700 {
@@ -232,19 +232,19 @@ h2 {
             display: inline-block;
             width: calc((100% / 3) - 30px);
             &:nth-child(3) {
-                @include small-tablet {
+                @include width-655 {
                     display: none;
                 }
             }
             &:nth-child(2) {
-                @include smartphone {
+                @include width-414 {
                     display: none;
                 }
             }
-            @include small-tablet {
+            @include width-655 {
                 width: calc(100% / 2 - 30px);
             }
-            @include smartphone {
+            @include width-414 {
                 width: 100%;
             }
         }
@@ -273,6 +273,9 @@ h2 {
         padding: 0;
         margin: 0 auto;
         padding: 100px 0;
+    }
+    header > .wrapper {
+        height: 100%;
     }
     .wrapper {
         height: auto;
@@ -317,7 +320,7 @@ h2 {
         @include width-920 {
             padding-top: 75px;
         }
-        @include smartphone {
+        @include width-414 {
             padding: 0 0 75px 0;
         }
     }
@@ -337,7 +340,7 @@ h2 {
     padding: 0 0 15px 0;
     }
     & p:nth-child(2) {
-        @include smartphone {
+        @include width-414 {
             height: 200px;
             overflow-y: scroll;
         }
@@ -431,29 +434,29 @@ h2 {
         &:hover {
             color: lighten($color: $highlightColor, $amount: 25);
             transform: scale(1.05);
-            @include smartphone {
+            @include width-414 {
                 transform: scale(1.6);
             }
         }
         @include width-1024 {
             margin-right: 0;
         }
-        @include smartphone {
-        transform: scale(1.5);
-        margin: 25px 0;
+        @include width-414 {
+            transform: scale(1.5);
+            margin: 25px 0;
         }
     }
 }
 
 .socialMediaLinks {
     display: flex;
-    @include smartphone {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 0 50px 0;
+    @include width-414 {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 0 50px 0;
     }
     li {
-        @include smartphone {
+        @include width-414 {
         width: 50%;
         }
     }
