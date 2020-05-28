@@ -1,5 +1,3 @@
-  // I don't totally know how to use media queries in SCSS yet
-  
   @mixin min-screen {
   @media (min-width: 320px) { @content; }
 }
